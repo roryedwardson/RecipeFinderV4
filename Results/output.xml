@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.3 on win32)" generated="20230619 09:08:20.595" rpa="false" schemaversion="4">
+<suite id="s1" name="RecipeFinder" source="C:\development\robot-scripts\RecipeFinderV4\tests\RecipeFinder.robot">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230619 09:08:20.774" endtime="20230619 09:08:20.775"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230619 09:08:20.775" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230619 09:08:20.775" endtime="20230619 09:08:22.039"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230619 09:08:22.040" endtime="20230619 09:08:22.153"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:20.774" endtime="20230619 09:08:22.153"/>
+</kw>
+<test id="s1-t1" name="Randomly generated ingredient should be returned" line="13">
+<kw name="Generate 1 random ingredient" library="RecipeFinderApp">
+<kw name="Get ingredient" library="RecipeFinderApp">
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT1}</var>
+<msg timestamp="20230619 09:08:22.155" level="INFO">${INGREDIENT1} = mayonnaise</msg>
+<status status="PASS" starttime="20230619 09:08:22.154" endtime="20230619 09:08:22.155"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${INGREDIENT1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230619 09:08:22.155" level="INFO">mayonnaise</msg>
+<status status="PASS" starttime="20230619 09:08:22.155" endtime="20230619 09:08:22.155"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.154" endtime="20230619 09:08:22.155"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.154" endtime="20230619 09:08:22.155"/>
+</kw>
+<doc>Generate an ingredient based on txt file pool,
+to test whether Python ingredient generator is working at first instance.</doc>
+<tag>001</tag>
+<tag>Python</tag>
+<status status="PASS" starttime="20230619 09:08:22.153" endtime="20230619 09:08:22.156"/>
+</test>
+<test id="s1-t2" name="Randomly generated ingredients should be returned" line="19">
+<kw name="Generate 3 random ingredients" library="RecipeFinderApp">
+<kw name="Get 3 ingredients" library="RecipeFinderApp">
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT1}</var>
+<msg timestamp="20230619 09:08:22.157" level="INFO">${INGREDIENT1} = snap pea</msg>
+<status status="PASS" starttime="20230619 09:08:22.157" endtime="20230619 09:08:22.157"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:22.157" level="INFO">${INGREDIENT1} = snap pea</msg>
+<status status="PASS" starttime="20230619 09:08:22.157" endtime="20230619 09:08:22.157"/>
+</kw>
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT2}</var>
+<msg timestamp="20230619 09:08:22.158" level="INFO">${INGREDIENT2} = asparagus</msg>
+<status status="PASS" starttime="20230619 09:08:22.158" endtime="20230619 09:08:22.158"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT2}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:22.158" level="INFO">${INGREDIENT2} = asparagus</msg>
+<status status="PASS" starttime="20230619 09:08:22.158" endtime="20230619 09:08:22.158"/>
+</kw>
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT3}</var>
+<msg timestamp="20230619 09:08:22.158" level="INFO">${INGREDIENT3} = sweet potato</msg>
+<status status="PASS" starttime="20230619 09:08:22.158" endtime="20230619 09:08:22.158"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT3}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:22.159" level="INFO">${INGREDIENT3} = sweet potato</msg>
+<status status="PASS" starttime="20230619 09:08:22.158" endtime="20230619 09:08:22.159"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${INGREDIENT1} ${INGREDIENT2} ${INGREDIENT3}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230619 09:08:22.159" level="INFO">snap pea asparagus sweet potato</msg>
+<status status="PASS" starttime="20230619 09:08:22.159" endtime="20230619 09:08:22.159"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.157" endtime="20230619 09:08:22.159"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.157" endtime="20230619 09:08:22.159"/>
+</kw>
+<doc>Generate three ingredients based on txt file pool,
+and set them as global variables to be used in next tests.</doc>
+<tag>002</tag>
+<tag>Python</tag>
+<status status="PASS" starttime="20230619 09:08:22.156" endtime="20230619 09:08:22.159"/>
+</test>
+<test id="s1-t3" name="Search for three randomly generated ingredients" line="25">
+<kw name="Generate 3 random ingredients" library="RecipeFinderApp">
+<kw name="Get 3 ingredients" library="RecipeFinderApp">
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT1}</var>
+<msg timestamp="20230619 09:08:22.161" level="INFO">${INGREDIENT1} = romaine lettuce</msg>
+<status status="PASS" starttime="20230619 09:08:22.160" endtime="20230619 09:08:22.161"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:22.161" level="INFO">${INGREDIENT1} = romaine lettuce</msg>
+<status status="PASS" starttime="20230619 09:08:22.161" endtime="20230619 09:08:22.161"/>
+</kw>
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT2}</var>
+<msg timestamp="20230619 09:08:22.161" level="INFO">${INGREDIENT2} = powdered sugar</msg>
+<status status="PASS" starttime="20230619 09:08:22.161" endtime="20230619 09:08:22.161"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT2}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:22.161" level="INFO">${INGREDIENT2} = powdered sugar</msg>
+<status status="PASS" starttime="20230619 09:08:22.161" endtime="20230619 09:08:22.161"/>
+</kw>
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT3}</var>
+<msg timestamp="20230619 09:08:22.162" level="INFO">${INGREDIENT3} = panko bread crumbs</msg>
+<status status="PASS" starttime="20230619 09:08:22.161" endtime="20230619 09:08:22.162"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT3}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:22.162" level="INFO">${INGREDIENT3} = panko bread crumbs</msg>
+<status status="PASS" starttime="20230619 09:08:22.162" endtime="20230619 09:08:22.162"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${INGREDIENT1} ${INGREDIENT2} ${INGREDIENT3}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230619 09:08:22.162" level="INFO">romaine lettuce powdered sugar panko bread crumbs</msg>
+<status status="PASS" starttime="20230619 09:08:22.162" endtime="20230619 09:08:22.162"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.160" endtime="20230619 09:08:22.162"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.160" endtime="20230619 09:08:22.162"/>
+</kw>
+<kw name="Perform search" library="RecipeFinderApp">
+<kw name="Navigate to" library="GoogleLanding">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.google.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230619 09:08:22.163" level="INFO">Opening url 'https://www.google.com/'</msg>
+<status status="PASS" starttime="20230619 09:08:22.163" endtime="20230619 09:08:24.163"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.162" endtime="20230619 09:08:24.163"/>
+</kw>
+<kw name="Accept cookies" library="GoogleLanding">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>element should be visible</arg>
+<arg>${cookies_element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${cookies_element}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230619 09:08:24.192" level="INFO">Element '//*[@id="L2AGLb"]' is displayed.</msg>
+<status status="PASS" starttime="20230619 09:08:24.163" endtime="20230619 09:08:24.192"/>
+</kw>
+<msg timestamp="20230619 09:08:24.192" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20230619 09:08:24.163" endtime="20230619 09:08:24.192"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>click button</arg>
+<arg>${cookies_element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${cookies_element}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230619 09:08:24.194" level="INFO">Clicking button '//*[@id="L2AGLb"]'.</msg>
+<status status="PASS" starttime="20230619 09:08:24.193" endtime="20230619 09:08:24.259"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:24.192" endtime="20230619 09:08:24.259"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:24.163" endtime="20230619 09:08:24.259"/>
+</kw>
+<kw name="Verify page loaded" library="GoogleLanding">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${search_element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230619 09:08:24.259" endtime="20230619 09:08:24.271"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:24.259" endtime="20230619 09:08:24.272"/>
+</kw>
+<kw name="Search" library="GoogleLanding">
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${INGREDIENT1} ${INGREDIENT2} ${INGREDIENT3} recipe</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230619 09:08:24.272" level="INFO">${text} = romaine lettuce powdered sugar panko bread crumbs recipe</msg>
+<status status="PASS" starttime="20230619 09:08:24.272" endtime="20230619 09:08:24.272"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_element}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230619 09:08:24.272" level="INFO">Typing text 'romaine lettuce powdered sugar panko bread crumbs recipe' into text field '//*[@type="search"]'.</msg>
+<status status="PASS" starttime="20230619 09:08:24.272" endtime="20230619 09:08:24.377"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${search_element}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230619 09:08:24.378" level="INFO">Sending key(s) ('RETURN',) to //*[@type="search"] element.</msg>
+<msg timestamp="20230619 09:08:24.746" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20230619 09:08:24.746" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230619 09:08:24.377" endtime="20230619 09:08:26.687"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:24.272" endtime="20230619 09:08:26.687"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:22.162" endtime="20230619 09:08:26.687"/>
+</kw>
+<doc>Perform Google search for recipes based on three randomly selected ingredients.</doc>
+<tag>003</tag>
+<tag>Google</tag>
+<tag>Python</tag>
+<status status="PASS" starttime="20230619 09:08:22.160" endtime="20230619 09:08:26.688"/>
+</test>
+<test id="s1-t4" name="Return recipe search results as txt file" line="31">
+<kw name="Generate 3 random ingredients" library="RecipeFinderApp">
+<kw name="Get 3 ingredients" library="RecipeFinderApp">
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT1}</var>
+<msg timestamp="20230619 09:08:26.692" level="INFO">${INGREDIENT1} = olive</msg>
+<status status="PASS" starttime="20230619 09:08:26.691" endtime="20230619 09:08:26.692"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT1}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:26.692" level="INFO">${INGREDIENT1} = olive</msg>
+<status status="PASS" starttime="20230619 09:08:26.692" endtime="20230619 09:08:26.692"/>
+</kw>
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT2}</var>
+<msg timestamp="20230619 09:08:26.692" level="INFO">${INGREDIENT2} = pea</msg>
+<status status="PASS" starttime="20230619 09:08:26.692" endtime="20230619 09:08:26.692"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT2}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:26.693" level="INFO">${INGREDIENT2} = pea</msg>
+<status status="PASS" starttime="20230619 09:08:26.692" endtime="20230619 09:08:26.693"/>
+</kw>
+<kw name="Generate Ingredient" library="ingredient_generator">
+<var>${INGREDIENT3}</var>
+<msg timestamp="20230619 09:08:26.693" level="INFO">${INGREDIENT3} = peanut butter</msg>
+<status status="PASS" starttime="20230619 09:08:26.693" endtime="20230619 09:08:26.693"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${INGREDIENT3}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230619 09:08:26.694" level="INFO">${INGREDIENT3} = peanut butter</msg>
+<status status="PASS" starttime="20230619 09:08:26.693" endtime="20230619 09:08:26.694"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${INGREDIENT1} ${INGREDIENT2} ${INGREDIENT3}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230619 09:08:26.694" level="INFO">olive pea peanut butter</msg>
+<status status="PASS" starttime="20230619 09:08:26.694" endtime="20230619 09:08:26.694"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:26.691" endtime="20230619 09:08:26.694"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:26.691" endtime="20230619 09:08:26.694"/>
+</kw>
+<kw name="Perform search" library="RecipeFinderApp">
+<kw name="Navigate to" library="GoogleLanding">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.google.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230619 09:08:26.695" level="INFO">Opening url 'https://www.google.com/'</msg>
+<status status="PASS" starttime="20230619 09:08:26.695" endtime="20230619 09:08:27.165"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:26.695" endtime="20230619 09:08:27.165"/>
+</kw>
+<kw name="Accept cookies" library="GoogleLanding">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>element should be visible</arg>
+<arg>${cookies_element}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${cookies_element}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230619 09:08:27.316" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230619 09:08:27.316" level="FAIL">Element with locator '//*[@id="L2AGLb"]' not found.</msg>
+<status status="FAIL" starttime="20230619 09:08:27.166" endtime="20230619 09:08:27.319"/>
+</kw>
+<msg timestamp="20230619 09:08:27.319" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20230619 09:08:27.166" endtime="20230619 09:08:27.319"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>click button</arg>
+<arg>${cookies_element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230619 09:08:27.319" endtime="20230619 09:08:27.319"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:27.165" endtime="20230619 09:08:27.320"/>
+</kw>
+<kw name="Verify page loaded" library="GoogleLanding">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${search_element}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230619 09:08:27.320" endtime="20230619 09:08:27.327"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:27.320" endtime="20230619 09:08:27.327"/>
+</kw>
+<kw name="Search" library="GoogleLanding">
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${INGREDIENT1} ${INGREDIENT2} ${INGREDIENT3} recipe</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230619 09:08:27.327" level="INFO">${text} = olive pea peanut butter recipe</msg>
+<status status="PASS" starttime="20230619 09:08:27.327" endtime="20230619 09:08:27.327"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_element}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230619 09:08:27.327" level="INFO">Typing text 'olive pea peanut butter recipe' into text field '//*[@type="search"]'.</msg>
+<status status="PASS" starttime="20230619 09:08:27.327" endtime="20230619 09:08:27.444"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${search_element}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20230619 09:08:27.445" level="INFO">Sending key(s) ('RETURN',) to //*[@type="search"] element.</msg>
+<msg timestamp="20230619 09:08:27.741" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20230619 09:08:27.741" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20230619 09:08:27.444" endtime="20230619 09:08:29.252"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:27.327" endtime="20230619 09:08:29.252"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:26.694" endtime="20230619 09:08:29.252"/>
+</kw>
+<kw name="Collate results as txt file" library="RecipeFinderApp">
+<kw name="Verify page loaded" library="GoogleResults">
+<doc>Validate results page</doc>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230619 09:08:29.254" endtime="20230619 09:08:29.265"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.253" endtime="20230619 09:08:29.265"/>
+</kw>
+<kw name="Generate results list" library="GoogleResults">
+<arg>${INGREDIENT1}</arg>
+<arg>${INGREDIENT2}</arg>
+<arg>${INGREDIENT3}</arg>
+<doc>Create list, append results</doc>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${recipe1}</var>
+<arg>//*[@id="rso"]/div[1]/div/div/div[1]/div/a/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230619 09:08:29.286" level="INFO">${recipe1} = Snow Peas With Peanut Sauce | Turkish Style Cooking</msg>
+<status status="PASS" starttime="20230619 09:08:29.266" endtime="20230619 09:08:29.286"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${url1}</var>
+<arg>css=#rso &gt; div:nth-child(1) &gt; div &gt; div &gt; div.Z26q7c.UK95Uc.jGGQ5e.VGXe8 &gt; div &gt; a</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230619 09:08:29.305" level="INFO">${url1} = https://turkishstylecooking.com/snow-peas-with-peanut-sauce.html</msg>
+<status status="PASS" starttime="20230619 09:08:29.286" endtime="20230619 09:08:29.305"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${recipe2}</var>
+<arg>//*[@id="rso"]/div[2]/div/div/div[1]/div/a/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230619 09:08:29.321" level="INFO">${recipe2} = Pea and Peanut Butter Soup Recipe - Thomson Safaris</msg>
+<status status="PASS" starttime="20230619 09:08:29.306" endtime="20230619 09:08:29.321"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${url2}</var>
+<arg>css=#rso &gt; div:nth-child(2) &gt; div &gt; div &gt; div.Z26q7c.UK95Uc.jGGQ5e.VGXe8 &gt; div &gt; a</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230619 09:08:29.338" level="INFO">${url2} = https://thomsonsafaris.com/blog/tanzanian-food-pea-and-peanut-butter-soup-recipe/</msg>
+<status status="PASS" starttime="20230619 09:08:29.322" endtime="20230619 09:08:29.338"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${recipe3}</var>
+<arg>//*[@id="rso"]/div[3]/div/div/div[1]/div/a/h3</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230619 09:08:29.353" level="INFO">${recipe3} = Peanut Butter Pasta and Peas - m e g a t a r i a n</msg>
+<status status="PASS" starttime="20230619 09:08:29.338" endtime="20230619 09:08:29.353"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${url3}</var>
+<arg>css=#rso &gt; div:nth-child(3) &gt; div &gt; div &gt; div.Z26q7c.UK95Uc.jGGQ5e &gt; div &gt; a</arg>
+<arg>href</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20230619 09:08:29.368" level="INFO">${url3} = http://megatarian.blogspot.com/2008/09/peanut-butter-pasta-and-peas.html</msg>
+<status status="PASS" starttime="20230619 09:08:29.353" endtime="20230619 09:08:29.368"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>${recipe1}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.368" endtime="20230619 09:08:29.368"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>${url1}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.368" endtime="20230619 09:08:29.368"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>\n</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.368" endtime="20230619 09:08:29.369"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>${recipe2}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.369" endtime="20230619 09:08:29.369"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>${url2}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.369" endtime="20230619 09:08:29.370"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>\n</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.370" endtime="20230619 09:08:29.370"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>${recipe3}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.370" endtime="20230619 09:08:29.370"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${rec_list}</arg>
+<arg>${url3}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230619 09:08:29.370" endtime="20230619 09:08:29.370"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rec_list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230619 09:08:29.370" level="INFO">['Snow Peas With Peanut Sauce | Turkish Style Cooking', 'https://turkishstylecooking.com/snow-peas-with-peanut-sauce.html', '\n', 'Pea and Peanut Butter Soup Recipe - Thomson Safaris', 'https://thomsonsafaris.com/blog/tanzanian-food-pea-and-peanut-butter-soup-recipe/', '\n', 'Peanut Butter Pasta and Peas - m e g a t a r i a n', 'http://megatarian.blogspot.com/2008/09/peanut-butter-pasta-and-peas.html']</msg>
+<status status="PASS" starttime="20230619 09:08:29.370" endtime="20230619 09:08:29.370"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.266" endtime="20230619 09:08:29.370"/>
+</kw>
+<kw name="Save to txt file" library="GoogleResults">
+<arg>${INGREDIENT1}</arg>
+<arg>${INGREDIENT2}</arg>
+<arg>${INGREDIENT3}</arg>
+<doc>Append list to txt file, with each item on a new line</doc>
+<kw name="Get Current Date" library="DateTime">
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230619 09:08:29.371" level="INFO">${timestamp} = 20230619-0908</msg>
+<status status="PASS" starttime="20230619 09:08:29.371" endtime="20230619 09:08:29.371"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${filename}</var>
+<arg>recipe-ideas-${timestamp}.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230619 09:08:29.371" level="INFO">${filename} = recipe-ideas-20230619-0908.txt</msg>
+<status status="PASS" starttime="20230619 09:08:29.371" endtime="20230619 09:08:29.371"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${title}</var>
+<arg>${INGREDIENT1}, ${INGREDIENT2} &amp; ${INGREDIENT3}: Recipe Ideas</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230619 09:08:29.371" level="INFO">${title} = olive, pea &amp; peanut butter: Recipe Ideas</msg>
+<status status="PASS" starttime="20230619 09:08:29.371" endtime="20230619 09:08:29.371"/>
+</kw>
+<kw name="Convert To Title Case" library="String">
+<var>${title_tcase}</var>
+<arg>${title}</arg>
+<doc>Converts string to title case.</doc>
+<msg timestamp="20230619 09:08:29.371" level="INFO">${title_tcase} = Olive, Pea &amp; Peanut Butter: Recipe Ideas</msg>
+<status status="PASS" starttime="20230619 09:08:29.371" endtime="20230619 09:08:29.371"/>
+</kw>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${title_tcase}\n\n\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.372" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.371" endtime="20230619 09:08:29.372"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{rec_list}</value>
+<iter>
+<var name="${item}">Snow Peas With Peanut Sauce | Turkish Style Cooking</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.373" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.373" endtime="20230619 09:08:29.373"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.372" endtime="20230619 09:08:29.373"/>
+</iter>
+<iter>
+<var name="${item}">https://turkishstylecooking.com/snow-peas-with-peanut-sauce.html</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.374" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.373" endtime="20230619 09:08:29.374"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.373" endtime="20230619 09:08:29.374"/>
+</iter>
+<iter>
+<var name="${item}">
+</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.375" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.374" endtime="20230619 09:08:29.375"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.374" endtime="20230619 09:08:29.375"/>
+</iter>
+<iter>
+<var name="${item}">Pea and Peanut Butter Soup Recipe - Thomson Safaris</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.376" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.375" endtime="20230619 09:08:29.376"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.375" endtime="20230619 09:08:29.376"/>
+</iter>
+<iter>
+<var name="${item}">https://thomsonsafaris.com/blog/tanzanian-food-pea-and-peanut-butter-soup-recipe/</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.376" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.376" endtime="20230619 09:08:29.376"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.376" endtime="20230619 09:08:29.376"/>
+</iter>
+<iter>
+<var name="${item}">
+</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.377" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.377" endtime="20230619 09:08:29.377"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.376" endtime="20230619 09:08:29.377"/>
+</iter>
+<iter>
+<var name="${item}">Peanut Butter Pasta and Peas - m e g a t a r i a n</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.378" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.377" endtime="20230619 09:08:29.378"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.377" endtime="20230619 09:08:29.378"/>
+</iter>
+<iter>
+<var name="${item}">http://megatarian.blogspot.com/2008/09/peanut-butter-pasta-and-peas.html</var>
+<kw name="Append To File" library="OperatingSystem">
+<arg>../RecipeFinderV4/Results/RecipeIdeas/${filename}</arg>
+<arg>${item}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<msg timestamp="20230619 09:08:29.379" level="INFO" html="true">Appended to file '&lt;a href="file://C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt"&gt;C:\development\robot-scripts\RecipeFinderV4\Results\RecipeIdeas\recipe-ideas-20230619-0908.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20230619 09:08:29.378" endtime="20230619 09:08:29.379"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.378" endtime="20230619 09:08:29.379"/>
+</iter>
+<status status="PASS" starttime="20230619 09:08:29.372" endtime="20230619 09:08:29.379"/>
+</for>
+<status status="PASS" starttime="20230619 09:08:29.370" endtime="20230619 09:08:29.379"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.253" endtime="20230619 09:08:29.379"/>
+</kw>
+<doc>Perform Google search for recipes based on three randomly selected ingredients,
+and return recipe results as easily readable txt file.
+Google results have inconsistent xpath, so this does not work 100% of the time.</doc>
+<tag>004</tag>
+<tag>Google</tag>
+<tag>Python</tag>
+<status status="PASS" starttime="20230619 09:08:26.689" endtime="20230619 09:08:29.379"/>
+</test>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230619 09:08:29.380" endtime="20230619 09:08:35.622"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:29.380" endtime="20230619 09:08:35.622"/>
+</kw>
+<status status="PASS" starttime="20230619 09:08:20.596" endtime="20230619 09:08:35.622"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">001</stat>
+<stat pass="1" fail="0" skip="0">002</stat>
+<stat pass="1" fail="0" skip="0">003</stat>
+<stat pass="1" fail="0" skip="0">004</stat>
+<stat pass="2" fail="0" skip="0">Google</stat>
+<stat pass="4" fail="0" skip="0">Python</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="RecipeFinder">RecipeFinder</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
